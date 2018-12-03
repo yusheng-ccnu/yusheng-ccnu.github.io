@@ -4,7 +4,7 @@
   <url>
     <loc>http://yoursite.com/2018/11/27/emailserver/</loc>
     
-    <lastmod>2018-11-27T07:51:33.250Z</lastmod>
+    <lastmod>2018-11-27T08:24:05.421Z</lastmod>
     
   </url>
   
@@ -58,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/07/java-string/</loc>
-    
-    <lastmod>2018-11-27T05:54:50.768Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2018/09/07/java-education/</loc>
     
     <lastmod>2018-11-27T05:54:50.768Z</lastmod>
@@ -72,14 +65,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/11/27/hello-world/</loc>
+    <loc>http://yoursite.com/2018/09/07/java-string/</loc>
+    
+    <lastmod>2018-11-27T05:54:50.768Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/08/23/index/</loc>
     
     <lastmod>2018-11-27T05:54:50.767Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/08/23/index/</loc>
+    <loc>http://yoursite.com/2018/11/27/hello-world/</loc>
     
     <lastmod>2018-11-27T05:54:50.767Z</lastmod>
     
