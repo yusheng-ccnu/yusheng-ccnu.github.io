@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据仓库特性和基本概念]]></title>
+    <url>%2F2019%2F04%2F24%2Fdatafactory-2%2F</url>
+    <content type="text"><![CDATA[数据仓库特性和基本概念数据仓库概念​ 数据仓库是一个面向主题、集成的、非易失的、随时间变化的用来支持管理人员决策的数据集合。 数据仓库的特性1、面向主题​ 数据仓库在面向特定业务已经定义好主题，每个主题可以一组相关的表来具体实现。 2、集成​ 数据仓库的数据来源于不同的数据源，这些数据进入数据仓库必须进行转换，重新格式化，重新排列和汇总，最后的结果是存在于数据仓库中的单一物理映像。下图（引用自《数据仓库》机械工业出版社 第四版）展示简单的数据处理过程： 3、非易失性​ 数据仓库中的数据通常是批量的载入和访问，一般情况下，数据仓库中的数据不进行数据更新，当产生后继变化的时候，一个新的记录就会被写入数据仓库。 4、随时间变化​ 时变性的意思就是数据仓库中的每个数据单元只是在某一时间是准确的。 数据仓库中的基本概念1、粒度​ 粒度指的是数据仓库中数据单元的细节程度或综合程度的级别。粒度级别越低，查询越广泛；反之，粒度级别越高，查询范围越小。 ​ 举个简单的例子，假设要知道用户A是否在上星期给气象局打过电话。如果使用低粒度级别的存储方式，数据仓库中会存储A用户所有的通话记录，虽然要遍历很多信息，但是终究是可以找到的；但是如果采用高粒度的存储方式，只存储A用户某一星期的通话次数，就无法确定他是否在上周给气象局打过电话。]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>数据仓库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据仓库绪论]]></title>
+    <url>%2F2019%2F04%2F24%2Fdatafactory-1%2F</url>
+    <content type="text"><![CDATA[数据仓库绪论体系化的数据仓库环境 体系化的数据仓库的核心，主要存在两种数据：原始数据和导出数据。 原始数据是维持企业日常运作产生的真实的数据，而导出数据是经过汇总和计算满足某一业务需求的数据。 原始数据可更新，导出数据可以通过重新计算得到，但是不可以更新。 原始数据支持日常工作，而导出数据一般都是针对某一业务。 原始数据一般是当值数据，而导出数据一般为历史数据。 在体系结构化环境中有四个层次的数据：操作层、原子层或数据仓库层、部门层以及个体层。下图（引用自《数据仓库》机械工业出版社 第四版） 体系结构化环境中很重要的一个方面：数据集成，下图（引用自《数据仓库》机械工业出版社 第四版）展示数据集成一个简单的例子 一旦建立数据仓库，就需要对数据仓库进行维护。其中一个很重要的工作就是对数据仓库的性能进行监控，监控的信息可以根据具体的情况进行设计。]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>数据仓库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[局域网内的邮件服务器搭建]]></title>
     <url>%2F2018%2F11%2F27%2Femailserver%2F</url>
     <content type="text"><![CDATA[局域网邮件服务器搭建搭建软件环境 win7 专业版 mysql 5.5.62 foxmail 客户端 hMailServer-5.6.7 搭建步骤安装MySQL数据库 mysql 安装文件传送门 安装mysql软件： 双击mysql安装文件，点击next: 如果出现如下页面，点击Execute，并按照提示安装完额外安装的软件之后，点击next: 点击execute，并且等待软件安装成功 出现如下页面继续点击next，不需要改动 输入mysql数据库登录密码（记住自己设置的mysql数据库登录密码） 查看mysql数据安装的位置，没有自己修改路径的情况下，默认路径在：C:\Program Files\MySQL\MySQL Server 5.5 添加mysql到环境变量 将mysql安装目录的bin目录添加到环境变量，本例中的路径就是（C:\Program Files\MySQL\MySQL Server 5.5\bin） 在计算机》属性》高级系统设置》环境变量》path，点击编辑，将上述路径填在在最末尾，如果原地址最后没有分号，自己添加英文的分号，然后再将路径添加在后面。 安装hMailServer-5.6.7 hMailServer-5.6.7安装文件传送门 安装hMailServer软件 点击hMailServer安装文件，点击next，直到出现如下界面 点击next出现： 点击next，出现以下界面，这地方要设置密码，用后面登录软件以及添加数据库: 一直点击next或者install，直到出现下面的界面表示安装成功： 设置数据库 打开hMailServer databases客户端，点击next，选择创建新的数据库，选择Mysql： 在下面页面中填入mysql对应的参数： 点击next后，此处选择mysql55 将libmysql.dll文件放入hMailserver安装目录下的bin目录下，如本例就是（C:\Program Files (x86)\hMailServer\Bin），点击next，直到出现下述页面则安装成功。 添加域名，选择domains，右键add 添加账号，点击accounts，邮件add就可以添加账号： ### 设置foxmail客户端 安装好foxmail客户端之后点击打开，点击手动设置手动设置 以同样的方式设置两个账号，并且相互发送邮件，测试的效果]]></content>
@@ -43,7 +67,7 @@
     <url>%2F2018%2F09%2F06%2Fmeituan%2F</url>
     <content type="text"><![CDATA[美团秋招算法题目大富翁游戏题目描述 大富翁游戏，玩家根据骰子的点数决定走的步数，即骰子点数为1时可以走一步，点数为2时可以走两步，点数为n时可以走n步。求玩家走到第n步（n&lt;=骰子最大点数且是方法的唯一入参）时，总共有多少种投骰子的方法。 题目分析 这道算法题可以用归纳方法来做，其实也就是斐波那契数列的变种问题。 假设用f(n)表示玩家走到n步时共有f(n)中走法，所以可以推断出 f(1) = 1 f(2) = f(1) + 1 =2 f(3) = f(2) + f(1) + 1 = 4 则： f(n) = f(n - 1) + f(n - 2) + f(n - 3) + … + f(2) + f(1) + 1 = 2 ^ (n - 1) 有了这个思路，就很容易编写出代码了。 代码123456789import java.util.Scanner; public class Main &#123; public static void main(String []args)&#123; Scanner scanner = new Scanner(System.in); int num = scanner.nextInt(); System.out.print(1 &lt;&lt; (num - 1)); &#125;&#125; 钱币问题题目描述 给你六种面额 1、5、10、20、50、100 元的纸币，假设每种币值的数量都足够多，编写程序求组成N元（N为0~10000的非负整数）的不同组合的个数。 题目分析 这个问题我们可以求解理解为N - 1, N - 5, N - 10, N - 20, N - 50, N - 100这几种情况的和，对于N元我们又可以理解从1～N这些钱的组合数的和。对于N值为1~4只有1种组合，即f(x) = 1 (1 =&lt; x &lt;= 4)，对于5~9我们有2中组合，即f(x) = f(x - 5) + 1 (5=&lt; x &lt;= 9)，一次类推下去，对于N，则f(n) = f(n -1) + f(n - 5) + f(n - 10) + f(n - 20) + f(n - 50) + f(n - 100)，则用数组res记录1～N的组合数可以得到下表。 1 2 3 4 5 6 7 8 9 10 1 1 1 1 2 2 2 2 2 4 下面给出代码 代码1234567891011121314151617181920import java.util.Scanner; public class Main &#123; public static void main(String []args)&#123; Scanner scanner = new Scanner(System.in); int money = scanner.nextInt(); int coins[] = &#123;1, 5, 10, 20, 50, 100&#125;; long res[] = new long[money + 1]; res[0] = 1L; for (int i = 0; i &lt; coins.length; i ++) &#123; for (int j = 1; j &lt;= money; j ++) &#123; //如果j大于当前的最大钱币，就加上N-coins[i]的数量 if (j &gt;= coins[i]) &#123; res[j] += res[j - coins[i]]; &#125; &#125; &#125; System.out.print(res[money]); &#125;&#125; 矩形游戏题目描述 给定一组非负整数组成的数组h，代表一组柱状图的高度，其中每个柱子的宽度都为1。 在这组柱状图中找到能组成的最大矩形的面积（如图所示）。 入参h为一个整型数组，代表每个柱子的高度，返回面积的值。 题目分析 依次选择每一根柱子，求出每一根柱子扩展出去的最大矩形，那么其中最大的矩形就是我们想要的。计算的时候选择柱子，向左向右扩展就可以计算，记录最大值。 代码12345678910111213141516171819202122232425262728293031323334353637383940import java.util.Scanner; public class Main &#123; public static void main(String []args) &#123; Scanner scanner = new Scanner(System.in); int n = scanner.nextInt(); int arr[] = new int[n]; for (int i = 0; i &lt; n; i ++) &#123; arr[i] = scanner.nextInt(); &#125; int maxArea = 0; for (int i = 1; i &lt; n; i ++) &#123; int temp = arr[i]; //向左扩展 for (int left = i-1; left &gt;= 0; left --) &#123; if (arr[left] &lt; arr[i]) &#123; break; &#125; else &#123; temp += arr[i]; &#125; &#125; //向右扩展 for (int right = i + 1; right &lt; n; right ++) &#123; if (arr[right] &lt; arr[i]) &#123; break; &#125; else &#123; temp += arr[i]; &#125; &#125; //记录最大值 if (maxArea &lt; temp) &#123; maxArea = temp; &#125; &#125; //输出最大值 System.out.print(maxArea); &#125;&#125; 最长公共字符串题目描述 给出两个字符串（可能包含空格）,找出其中最长的公共连续子串,输出其长度。 题目分析 1、把两个字符串分别以行和列组成一个二维矩阵。 2、比较二维矩阵中每个点对应行列字符中否相等，相等的话值设置为1，否则设置为0。 3、通过查找出值为1的最长对角线就能找到最长公共子串。 但是其实找矩阵最长的对角线是一件麻烦的事情，因此可以做出如下改版 为了进一步优化算法的效率，我们可以再计算某个二维矩阵的值的时候顺便计算出来当前最长的公共子串的长度，即某个二维矩阵元素的值为1加上左上角的值，这样就避免了后续查找对角线长度的操作了。修改后的二维矩阵如下： 代码123456789101112131415161718192021222324252627282930313233import java.util.Scanner; public class Main &#123; public static void main(String []args)&#123; Scanner scanner = new Scanner(System.in); String str1 = scanner.nextLine(); String str2 = scanner.nextLine(); int row = str1.length(); int col = str2.length(); int dp[][] = new int[row][col]; int max = 0; if (str1.length() &gt; 50 || str2.length() &gt; 50) &#123; System.out.println("输入的字符串长度超限！"); &#125; for (int i = 0; i &lt; row; i ++) &#123; for (int j = 0; j &lt; col; j++) &#123; if (str1.charAt(i) == str2.charAt(j)) &#123; if (i &gt;=1 &amp;&amp; j &gt;= 1) &#123; dp[i][j] = dp[i - 1][j - 1] + 1; &#125; else &#123; dp[i][j] = 1; &#125; max = max &gt; dp[i][j] ? max : dp[i][j]; &#125; else &#123; dp[i][j] = 0; &#125; &#125; &#125; System.out.print(max); &#125;&#125;]]></content>
       <categories>
-        <category>面试算法</category>
+        <category>数据结构和算法</category>
       </categories>
       <tags>
         <tag>美团</tag>
@@ -55,7 +79,7 @@
     <url>%2F2018%2F09%2F05%2Fnianparty%2F</url>
     <content type="text"><![CDATA[公司年会算法题题目描述 N个人参与游戏，站成一排来抢工作人抛来的M个小玩偶。为了增加游戏的趣味和难度，规则规定，参与游戏的人抢到的礼物不能比左右两边的人多两个或以上，否则会受到一定的惩罚。游戏结束时拥有玩偶最多的人将获得一份大奖。假设大家都想赢得这份大奖，请问站在第K个位置的小招在赢得游戏时，最多能拥有几个玩偶？ 题目分析 如图所示，假设站在k位置的小招最多拥有p个玩偶，非阴影部分为M，阴影部分为s，两部分加起来就是np，假设三角形的边长为x，而玩偶的数目为f(x)，可得f(x) = f(x - 1) + x (图形的垂直高度对应着玩偶的数量)，所以分别计算两个三角形表示的玩偶数目可得到如下的公式：1s = (k-1)k/2 + (n-k+1)(n-k)/2 考虑可能多余i个玩偶，则从玩偶数量最少的人选择i个发玩偶，则可以这样计算p1p = (m + s - i) / n 编码实现用java实现该算法的代码 123456789101112131415161718192021222324252627282930import java.util.Scanner;public class Demo &#123; public static void main(String []args)&#123; Scanner scanner = new Scanner(System.in); //参与游戏的人数量 int n = scanner.nextInt(); //发放的玩偶数 int m = scanner.nextInt(); //小招站的位置 int k = scanner.nextInt(); if (n &lt;= 0 || k &lt;=0 || m &lt;= 0 || k &gt; n)&#123; System.out.println(0); return; &#125; if (n &gt; 0 &amp;&amp; k &gt;= 1 &amp;&amp; m &gt;= 1) &#123; //计算s的值 int s = ((k - 1) * k &gt;&gt; 1) + ((n - k + 1) * (n - k) &gt;&gt; 1); for (int i = 0 ; i &lt; n ; i++) &#123; //迭代求解p值 if ((m + s - i) % n == 0) &#123; System.out.println((m + s - i) / n); break; &#125; &#125; &#125; &#125;&#125;]]></content>
       <categories>
-        <category>面试算法</category>
+        <category>数据结构和算法</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -68,7 +92,7 @@
     <url>%2F2018%2F09%2F04%2Fnim%2F</url>
     <content type="text"><![CDATA[Nim游戏及变种的算法题目Nim游戏简介 有若干堆石子，每堆石子的数量都是有限的，合法的移动是“选择一堆石子并拿走若干颗（不能不拿）”，如果轮到某个人时所有的石子堆都已经被拿空了，则判负（因为他此刻没有任何合法的移动）。当然还有反Nim游戏，即拿到最后一个石子的人输。 在求解Nim游戏前，我们给出P-position和N-position的定义：给出若干组二进制数，其二进制位对齐排列，把各列相加，如果各列得到的数字是偶数，那么它就是一个。以这个情况开局，或者在之后的某一手中，当前是一个安全组合，先手的人无论作出什么改变，都将使这个组合变为一个不安全的组合，而后手的人又总能由不安全的组合拼凑出一个安全的组合，我们称此时先手必败（后手必胜），这个局面称之为P-position，反之，若面临的是一个不安全组合，则其总有办法变为一个安全的组合，到下一个人进行时无论怎么改变都将成为一个不安全组合，此时后手必败（先手必胜），这个局面称之为N-position。 一下证明部分摘自知乎：https://www.zhihu.com/people/simonshao/activities 要知道，像Nim游戏这种博弈问题，最重要的是寻找必败态。这个必败态的的意思就是，这样一种局面摆在面前的话先手必败。其严格定义如下：1、无法进行任何移动的局面是必败态；2、可以移动到必败态的局面是非必败态；3、在必败态做的所有操作的结果都是非必败态。这个还是很好理解的吧，就是自己处在非必败态上总能移动到必败态把必败态留给对方，而对方处在必败态的话总是只能移动到非必败态，把非必败态留给自己，然后自己继续虐对方。 证明： 第一个命题显然，最终局面只有一个，就是全0，a1^a2^…^ai’^…^an = 0。 第二个命题，对于某个局面(a1,a2,…,an)，若a1^a2^…^an不为0，一定存在某个合法的移动，将ai改变成ai’后满足a1^a2^…^ai’^…^an=0。不妨设a1^a2^…^an=k，则一定存在某个ai，它的二进制表示在k的最高位上是1（否则k的最高位那个1是怎么得到的）。这时ai^k&lt;ai一定成立。则我们可以将ai改变成ai’=ai^k，此时a1^a2^…^ai’^…^an=a1^a2^…^an^k=0。 第三个命题，对于某个局面(a1,a2,…,an)，若a1^a2^…^an=0，一定不存在某个合法的移动，将ai改变成ai’后满足a1^a2^…^ai’^…^an=0。因为异或运算满足消去率，由a1^a2^…^an=a1^a2^…^ai’^…^an可以得到ai=ai’。所以将ai改变成ai’不是一个合法的移动。证毕。根据这个定理，我们可以在O(n)的时间内判断一个Nim的局面的性质，且如果它是N-position，也可以在O(n)的时间内找到所有的必胜策略。Nim问题就这样基本上完美的解决了。 Nim游戏衍生的算法题目题目描述 按照卡中心校园招聘的要求，HR小招和小商需要从三个科室中（分别为A、B、C）抽派面试官去往不同城市。两名HR按照以下规定轮流从任一科室选择面试官：每次至少选择一位，至多选择该科室剩余面试官数。最先选不到面试官的HR需要自己出差。假设HR小招和小商都不想出差且每次选择都采取最优策略，如果是小招先选，写一个函数来判断她是否需要出差。如果不需要出差，请给出第一步的最优策略。 题目分析从上述Nim游戏的简介不难看出，这个题目也是Nim游戏问题，对于这个题目若A ^ B ^ C = 0，小招就是必败态，否则就得选择一定的数量的面试官，转移到必败态给小商选择。为了使选择之后A ^ B ^ C = 0，枚举两两的异或和，只有第三个的值大于这个异或值，选择第三个值减去另外两个数的异或值的差就可以保证获胜。 代码示例1234567891011121314151617181920212223242526272829303132import java.util.Scanner;public class Nim &#123; public static void main(String args[])&#123; Scanner scanner = new Scanner(System.in); String inputData = scanner.nextLine(); String nums[] = inputData.split(","); int A = Integer.parseInt(nums[0]); int B = Integer.parseInt(nums[1]); int C = Integer.parseInt(nums[2]); int isOnBusiness = A ^ B ^ C; if (isOnBusiness == 0) &#123; System.out.println(1); return; &#125; if ((A ^ B) &lt; C ) &#123; System.out.println("C," + (C - (A ^ B)) ); &#125; if ((A ^ C) &lt; B) &#123; System.out.println("B," + (B - (A ^ C)) ); &#125; if ((B ^ C) &lt; A) &#123; System.out.println("A," + (A - (B ^ C)) ); &#125; &#125;&#125;]]></content>
       <categories>
-        <category>面试算法</category>
+        <category>数据结构和算法</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -81,11 +105,11 @@
     <url>%2F2018%2F09%2F04%2Fhadoop%2F</url>
     <content type="text"><![CDATA[hadoop 环境搭建搭建的软件版本 ubuntu 16.04 hadoop 2.6.5 java 1.8 在搭建hadoop环境之前，必须搭建好java的开发环境。 java环境 在java官网上下载合适版本的jdk 1https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 解压java安装包 1tar -zxvf jdk-8u181-linux-x64.tar.gz 在/etc/profile中添加如下内容： 1234export JAVA_HOME=/home/hadoop/jdk1.8.0_181 //此处替换jdk安装路径export JAVA_JRE=$&#123;JAVA_HOME&#125;/jreexport CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/libexport PATH=$&#123;JAVA_HOME&#125;/bin:$PATH hadoop环境搭建创建hadoop用户123sudo useradd -m hadoop //创建hadoop用户 sudo passwd hadoop //为hadoop用户设置密码sudo adduser hadoop sudo //为hadoop用户添加管理元权限 安装ssh，配置无密登录1sudo apt-get install openssh-server 首次登录，可能需要输入密码才可以，但是会在用户文件夹下面创建.ssh的文件夹 1ssh localhost 进入用户的.ssh文件夹下 123cd ~/.ssh/ # 若没有该目录，请先执行一次ssh localhostssh-keygen -t rsa # 会有提示，都按回车就可以cat ./id_rsa.pub &gt;&gt; ./authorized_keys # 加入授权 此时再登录localhost就不用再输入密码。 在hadoop官网下载合适的版本，这里下载的hadoop2.6.5，下载地址：1http://mirror.bit.edu.cn/apache/hadoop/common/ 解压 1tar -zxvf hadoop-2.6.5.tar.gz 重命名解压后的文件夹并给文件夹的权限给hadoop用户12mv ./hadoop-2.6.5/ ./hadoopsudo chown hadoop ./hadoop 进入hadoop安装目录12cd /home/hadoop/hadoop./bin/hadoop version 便可以看到hadoop的版本 hadoop单击配置（非分布式）非分布式的环境下无需进行其他配置，可以直接跑hadoop里面附带的例子12345cd /home/hadoop/hadoopmkdir ./inputcp ./etc/hadoop/*.xml ./input # 将配置文件作为输入文件./bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep ./input ./output &apos;dfs[a-z.]+&apos;cat ./output/* hadoop 伪分布式环境配置hadoop的配置文件再hadoo安装目录下的/etc/hadoop目录下面，如在我的环境里就是 /home/hadoop/hadoop/etc/hadoop下面 修改core-site.xml配置文件 1234567891011&lt;configuration&gt; &lt;property&gt; &lt;name&gt;hadoop.tmp.dir&lt;/name&gt; &lt;value&gt;file:/home/hadoop/hadoop/tmp&lt;/value&gt; &lt;description&gt;Abase for other temporary directories.&lt;/description&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;fs.defaultFS&lt;/name&gt; &lt;value&gt;hdfs://localhost:9000&lt;/value&gt; &lt;/property&gt;&lt;/configuration&gt; 同样还得修改hdfs-site.xml文件 1234567891011121314&lt;configuration&gt; &lt;property&gt; &lt;name&gt;dfs.replication&lt;/name&gt; &lt;value&gt;1&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt; &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/name&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt; &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/data&lt;/value&gt; &lt;/property&gt;&lt;/configuration&gt; hadoop配置文件说明Hadoop 的运行方式是由配置文件决定的（运行 Hadoop 时会读取配置文件），因此如果需要从伪分布式模式切换回非分布式模式，需要删除 core-site.xml 中的配置项。 此外，伪分布式虽然只需要配置 fs.defaultFS 和 dfs.replication 就可以运行（官方教程如此），不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和 dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。 配置完成之后需要格式化1./bin/hdfs namenode -format 格式化完成之后就可以启动hdfs1./sbin/start-dfs.sh 如果安装java并且配置了环境变量，但是在启动时还是报错：Error: JAVA_HOME is not set and could not be found. 则需要在hadoop/etc/hadoop（hadoop为hadoop安装）目录下修改hadoop-env.sh文件，在里面加入1export JAVA_HOME=/home/hadoop/jdk1.8.0_181]]></content>
       <categories>
-        <category>hadoop</category>
+        <category>大数据</category>
       </categories>
       <tags>
-        <tag>hadoop</tag>
         <tag>大数据</tag>
+        <tag>hadoop</tag>
         <tag>分布式计算</tag>
       </tags>
   </entry>

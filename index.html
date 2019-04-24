@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Hexo, 不吃香菜">
 
 
 
@@ -195,29 +195,39 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-bank"></i> <br>
             
             首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-haddop">
-          <a href="/categories/hadoop" rel="section">
+        <li class="menu-item menu-item-大数据">
+          <a href="/categories/大数据" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
             
-            haddop
+            大数据
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-算法">
-          <a href="/categories/面试算法" rel="section">
+        <li class="menu-item menu-item-数据结构和算法">
+          <a href="/categories/数据结构和算法" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
             
-            算法
+            数据结构和算法
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-机器学习">
+          <a href="/categories/machine-learning" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-android"></i> <br>
+            
+            机器学习
           </a>
         </li>
       
@@ -292,6 +302,382 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/datafactory-2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yusheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/logo.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不吃香菜的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/24/datafactory-2/" itemprop="url">数据仓库特性和基本概念</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T16:38:32+08:00">
+                2019-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  500
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="数据仓库特性和基本概念"><a href="#数据仓库特性和基本概念" class="headerlink" title="数据仓库特性和基本概念"></a>数据仓库特性和基本概念</h3><h4 id="数据仓库概念"><a href="#数据仓库概念" class="headerlink" title="数据仓库概念"></a>数据仓库概念</h4><p>​    数据仓库是一个面向主题、集成的、非易失的、随时间变化的用来支持管理人员决策的数据集合。</p>
+<h4 id="数据仓库的特性"><a href="#数据仓库的特性" class="headerlink" title="数据仓库的特性"></a>数据仓库的特性</h4><h5 id="1、面向主题"><a href="#1、面向主题" class="headerlink" title="1、面向主题"></a>1、面向主题</h5><p>​    数据仓库在面向特定业务已经定义好主题，每个主题可以一组相关的表来具体实现。</p>
+<h5 id="2、集成"><a href="#2、集成" class="headerlink" title="2、集成"></a>2、集成</h5><p>​    数据仓库的数据来源于不同的数据源，这些数据进入数据仓库必须进行转换，重新格式化，重新排列和汇总，最后的结果是存在于数据仓库中的单一物理映像。下图（引用自《数据仓库》机械工业出版社 第四版）展示简单的数据处理过程：</p>
+<p><img src="/2019/04/24/datafactory-2/data1.png" alt="1556095801525"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/24/datafactory-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/datafactory-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yusheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/logo.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不吃香菜的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/24/datafactory-1/" itemprop="url">数据仓库绪论</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T15:56:06+08:00">
+                2019-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  335
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数据仓库绪论"><a href="#数据仓库绪论" class="headerlink" title="数据仓库绪论"></a>数据仓库绪论</h3><h4 id="体系化的数据仓库环境"><a href="#体系化的数据仓库环境" class="headerlink" title="体系化的数据仓库环境"></a>体系化的数据仓库环境</h4><blockquote>
+<p>体系化的数据仓库的核心，主要存在两种数据：原始数据和导出数据。</p>
+</blockquote>
+<ul>
+<li><p>原始数据是维持企业日常运作产生的真实的数据，而导出数据是经过汇总和计算满足某一业务需求的数据。</p>
+</li>
+<li><p>原始数据可更新，导出数据可以通过重新计算得到，但是不可以更新。</p>
+</li>
+<li><p>原始数据支持日常工作，而导出数据一般都是针对某一业务。</p>
+</li>
+<li><p>原始数据一般是当值数据，而导出数据一般为历史数据。</p>
+</li>
+</ul>
+<blockquote>
+<p>在体系结构化环境中有四个层次的数据：操作层、原子层或数据仓库层、部门层以及个体层。下图（引用自《数据仓库》机械工业出版社 第四版）</p>
+</blockquote>
+<p><img src="/2019/04/24/datafactory-1/data1.png" alt="1556093596898"></p>
+<blockquote>
+<p>体系结构化环境中很重要的一个方面：数据集成，下图（引用自《数据仓库》机械工业出版社 第四版）展示数据集成一个简单的例子</p>
+</blockquote>
+<p><img src="/2019/04/24/datafactory-1/data2.png" alt="1556094193422"></p>
+<blockquote>
+<p>一旦建立数据仓库，就需要对数据仓库进行维护。其中一个很重要的工作就是对数据仓库的性能进行监控，监控的信息可以根据具体的情况进行设计。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1074,8 +1460,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试算法/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
+                  <a href="/categories/数据结构和算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构和算法</span>
                   </a>
                 </span>
 
@@ -1321,8 +1707,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试算法/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
+                  <a href="/categories/数据结构和算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构和算法</span>
                   </a>
                 </span>
 
@@ -1500,8 +1886,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试算法/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法</span>
+                  <a href="/categories/数据结构和算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构和算法</span>
                   </a>
                 </span>
 
@@ -1696,8 +2082,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/hadoop/" itemprop="url" rel="index">
-                    <span itemprop="name">hadoop</span>
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
                   </a>
                 </span>
 
@@ -1853,160 +2239,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/23/index/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yusheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/logo.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不吃香菜的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/23/index/" itemprop="url">实习经历</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T13:46:25+08:00">
-                2018-08-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  25
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>每一段历程都会是自己人生的财富，感恩在这儿的每一个人！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2052,7 +2291,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2074,7 +2313,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -2095,7 +2334,7 @@
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://github.com/yushend-ccnu" target="_blank" title="GitHub">
+                    <a href="https://github.com/yusheng-ccnu" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
@@ -2107,7 +2346,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="off_shore" target="_blank" title="Weibo">
+                    <a href="https://weibo.com/什么鬼d哈" target="_blank" title="Weibo">
                       
                         <i class="fa fa-fw fa-weibo"></i>Weibo</a>
                   </span>
@@ -2138,6 +2377,14 @@
             
             
               <li>
+                <a href="/2019/04/24/datafactory-2/" title="数据仓库特性和基本概念" target="_blank">数据仓库特性和基本概念</a>
+              </li>
+            
+              <li>
+                <a href="/2019/04/24/datafactory-1/" title="数据仓库绪论" target="_blank">数据仓库绪论</a>
+              </li>
+            
+              <li>
                 <a href="/2018/11/27/emailserver/" title="局域网内的邮件服务器搭建" target="_blank">局域网内的邮件服务器搭建</a>
               </li>
             
@@ -2147,14 +2394,6 @@
             
               <li>
                 <a href="/2018/09/07/java-string/" title="java基础-字符串" target="_blank">java基础-字符串</a>
-              </li>
-            
-              <li>
-                <a href="/2018/09/07/java-education/" title="java接口和抽象类" target="_blank">java接口和抽象类</a>
-              </li>
-            
-              <li>
-                <a href="/2018/09/06/meituan/" title="几道经典的算法题目" target="_blank">几道经典的算法题目</a>
               </li>
             
             </ul>
@@ -2181,7 +2420,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -2195,7 +2434,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.7k</span>
+    <span title="Site words total count">6.6k</span>
   
 </div>
 
