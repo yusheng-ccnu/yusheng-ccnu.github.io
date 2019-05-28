@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-24T11:30:53.729Z</updated>
+  <updated>2019-05-28T09:17:23.117Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>卷积神经网络</title>
+    <link href="http://yoursite.com/2019/05/28/cnn/"/>
+    <id>http://yoursite.com/2019/05/28/cnn/</id>
+    <published>2019-05-28T06:08:55.000Z</published>
+    <updated>2019-05-28T09:17:23.117Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="卷积神经网络-Convolution-network"><a href="#卷积神经网络-Convolution-network" class="headerlink" title="卷积神经网络(Convolution network)"></a>卷积神经网络(Convolution network)</h3><h4 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h4><p>​    卷积神经网络是一种能够处理类似于网状结构数据的神经网络结构。比如图片就是一种网状结构的数据，因此卷积神经网络在图像识别的领域应用广泛。卷积神经网络分为四个比较重要的层次：输入层、卷积层、池化层和输出层。图展示了一种比较典型的卷积神经网络结构：</p><p><img src="/2019/05/28/cnn/1.png" alt="1559024685819"></p><h4 id="卷积运算（convolution）"><a href="#卷积运算（convolution）" class="headerlink" title="卷积运算（convolution）"></a>卷积运算（convolution）</h4><p>​    卷积是卷积神经网络非常关键的组成部分，卷积运算式两个卷积核尺寸的矩阵的内积运算，是两个矩阵相同位置的数值相乘相加。卷积运算可以描述成下图：</p><p><img src="/2019/05/28/cnn/2.png" alt="1559024952630"></p><p>这里得介绍卷积的几个重要的概念：</p><ul><li>卷积核：也称之为滤波器，其本质是一个矩阵，可以理解为一个特征提取器。</li><li>步长：卷积窗口一次滑动的长度。</li><li>填充值：当滑动窗口覆盖的区域不够的时候需要填充特征矩阵。如图所示，卷积大小为2*2，步长为2，就会有一列没有处理，因此右边需要填充一列才可以完全处理完。</li></ul><p><img src="/2019/05/28/cnn/3.png" alt="1559026523403"></p><h5 id="卷积的本质"><a href="#卷积的本质" class="headerlink" title="卷积的本质"></a>卷积的本质</h5><p>​    本质上卷积是将二元函数 U(x,y) = f(x)g(y) 卷成一元函数 V(t) ，俗称降维打击。 考虑到函数 f 和 g 应该地位平等，或者说变量 x 和 y 应该地位平等，一种可取的办法就是沿直线 x+y = t  。</p><p><img src="/2019/05/28/cnn/6.png" alt="1559032711656"></p><p>卷积可以用来做多位数的乘法：</p><p><img src="/2019/05/28/cnn/5.png" alt="1559032355453"></p><h4 id="池化（pooling）"><a href="#池化（pooling）" class="headerlink" title="池化（pooling）"></a>池化（pooling）</h4><p>​    池化的本质是下采样的过程，池化能够压缩数据，减少参数。</p><ul><li>最大池化（Max Pooling）:最大池化去池化窗口最大值。</li><li>平均池化（Average Pooling）：平均池化取池化窗口内数值的平均值。</li></ul><p>多数情况下，最大池化的效果较好，而且最大池化也更容易计算，只需要取池化窗口里的最大值即可。</p><p><img src="/2019/05/28/cnn/4.png" alt="1559027737337"></p><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul><li>卷积核不一定非得是正方形，也可以是长方形，只要保证卷积之后的输出的尺寸是整数即可。</li><li>卷积核的个数经验设置是：离输入层较近的卷积核数量稍微少点，依次递增。</li></ul><h4 id="keras实现CNN"><a href="#keras实现CNN" class="headerlink" title="keras实现CNN"></a>keras实现CNN</h4><p>​    keras是一个简单的深度学习框架，搭建神经网络非常简单。下面是一个简单的小例子，作者在做文本分类时用到的。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建一个sequential的模型</span></span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(Convolution2D(n_filter, (filter_length, filter_length), input_shape=(<span class="number">200</span>, <span class="number">18</span>, <span class="number">1</span>), padding=<span class="string">'same'</span>))</span><br><span class="line">model.add(Activation(<span class="string">'relu'</span>))</span><br><span class="line">model.add(MaxPooling2D(pool_size=(n_pool, n_pool)))</span><br><span class="line">model.add(Dropout(<span class="number">0.5</span>))</span><br><span class="line">model.add(Flatten())</span><br><span class="line"><span class="comment"># 后面接上一个ANN</span></span><br><span class="line">model.add(Dense(<span class="number">128</span>))</span><br><span class="line">model.add(Activation(<span class="string">'relu'</span>))</span><br><span class="line">model.add(Dropout(<span class="number">0.5</span>))</span><br><span class="line">model.add(Dense(<span class="number">7</span>))</span><br><span class="line">model.add(Activation(<span class="string">'softmax'</span>))</span><br><span class="line"><span class="comment"># compile模型</span></span><br><span class="line">sgd = SGD(lr=<span class="number">0.01</span>, decay=<span class="number">1e-4</span>, momentum=<span class="number">0.9</span>, nesterov=<span class="keyword">True</span>)</span><br><span class="line">model.compile(loss=<span class="string">'categorical_crossentropy'</span>, optimizer=sgd, metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line">model.fit(x_train, y_train, batch_size=batch_size, epochs=nb_epoch, verbose=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;卷积神经网络-Convolution-network&quot;&gt;&lt;a href=&quot;#卷积神经网络-Convolution-network&quot; class=&quot;headerlink&quot; title=&quot;卷积神经网络(Convolution network)&quot;&gt;&lt;/a&gt;卷积神经网络(
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="卷积神经网络" scheme="http://yoursite.com/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据仓库特性和基本概念</title>
     <link href="http://yoursite.com/2019/04/24/datafactory-2/"/>
     <id>http://yoursite.com/2019/04/24/datafactory-2/</id>
     <published>2019-04-24T08:38:32.000Z</published>
-    <updated>2019-04-24T11:30:53.729Z</updated>
+    <updated>2019-04-26T06:29:01.187Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="数据仓库特性和基本概念"><a href="#数据仓库特性和基本概念" class="headerlink" title="数据仓库特性和基本概念"></a>数据仓库特性和基本概念</h3><h4 id="数据仓库概念"><a href="#数据仓库概念" class="headerlink" title="数据仓库概念"></a>数据仓库概念</h4><p>​    数据仓库是一个面向主题、集成的、非易失的、随时间变化的用来支持管理人员决策的数据集合。</p><h4 id="数据仓库的特性"><a href="#数据仓库的特性" class="headerlink" title="数据仓库的特性"></a>数据仓库的特性</h4><h5 id="1、面向主题"><a href="#1、面向主题" class="headerlink" title="1、面向主题"></a>1、面向主题</h5><p>​    数据仓库在面向特定业务已经定义好主题，每个主题可以一组相关的表来具体实现。</p><h5 id="2、集成"><a href="#2、集成" class="headerlink" title="2、集成"></a>2、集成</h5><p>​    数据仓库的数据来源于不同的数据源，这些数据进入数据仓库必须进行转换，重新格式化，重新排列和汇总，最后的结果是存在于数据仓库中的单一物理映像。下图（引用自《数据仓库》机械工业出版社 第四版）展示简单的数据处理过程：</p><p><img src="/2019/04/24/datafactory-2/data1.png" alt="1556095801525"></p><a id="more"></a><h5 id="3、非易失性"><a href="#3、非易失性" class="headerlink" title="3、非易失性"></a>3、非易失性</h5><p>​    数据仓库中的数据通常是批量的载入和访问，一般情况下，数据仓库中的数据不进行数据更新，当产生后继变化的时候，一个新的记录就会被写入数据仓库。</p><h5 id="4、随时间变化"><a href="#4、随时间变化" class="headerlink" title="4、随时间变化"></a>4、随时间变化</h5><p>​    时变性的意思就是数据仓库中的每个数据单元只是在某一时间是准确的。</p><h4 id="数据仓库中的基本概念"><a href="#数据仓库中的基本概念" class="headerlink" title="数据仓库中的基本概念"></a>数据仓库中的基本概念</h4><h5 id="1、粒度"><a href="#1、粒度" class="headerlink" title="1、粒度"></a>1、粒度</h5><p>​    粒度指的是数据仓库中数据单元的细节程度或综合程度的级别。粒度级别越低，查询越广泛；反之，粒度级别越高，查询范围越小。</p><p>​    举个简单的例子，假设要知道用户A是否在上星期给气象局打过电话。如果使用低粒度级别的存储方式，数据仓库中会存储A用户所有的通话记录，虽然要遍历很多信息，但是终究是可以找到的；但是如果采用高粒度的存储方式，只存储A用户某一星期的通话次数，就无法确定他是否在上周给气象局打过电话。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="数据仓库特性和基本概念"><a href="#数据仓库特性和基本概念" class="headerlink" title="数据仓库特性和基本概念"></a>数据仓库特性和基本概念</h3><h4 id="数据仓库概念"><a href="#数据仓库概念" class="headerlink" title="数据仓库概念"></a>数据仓库概念</h4><p>​    数据仓库是一个面向主题、集成的、非易失的、随时间变化的用来支持管理人员决策的数据集合。</p><h4 id="数据仓库的特性"><a href="#数据仓库的特性" class="headerlink" title="数据仓库的特性"></a>数据仓库的特性</h4><h5 id="1、面向主题"><a href="#1、面向主题" class="headerlink" title="1、面向主题"></a>1、面向主题</h5><p>​    数据仓库在面向特定业务已经定义好主题，每个主题可以一组相关的表来具体实现。</p><h5 id="2、集成"><a href="#2、集成" class="headerlink" title="2、集成"></a>2、集成</h5><p>​    数据仓库的数据来源于不同的数据源，这些数据进入数据仓库必须进行转换，重新格式化，重新排列和汇总，最后的结果是存在于数据仓库中的单一物理映像。下图（引用自《数据仓库》机械工业出版社 第四版）展示简单的数据处理过程：</p><p><img src="/2019/04/24/datafactory-2/data1.png" alt="1556095801525"></p><a id="more"></a><h5 id="3、非易失性"><a href="#3、非易失性" class="headerlink" title="3、非易失性"></a>3、非易失性</h5><p>​    数据仓库中的数据通常是批量的载入和访问，一般情况下，数据仓库中的数据不进行数据更新，当产生后继变化的时候，一个新的记录就会被写入数据仓库。</p><h5 id="4、随时间变化"><a href="#4、随时间变化" class="headerlink" title="4、随时间变化"></a>4、随时间变化</h5><p>​    时变性的意思就是数据仓库中的每个数据单元只是在某一时间是准确的。</p><h4 id="数据仓库中的粒度"><a href="#数据仓库中的粒度" class="headerlink" title="数据仓库中的粒度"></a>数据仓库中的粒度</h4><p>​    粒度指的是数据仓库中数据单元的细节程度或综合程度的级别。粒度级别越低，查询越广泛；反之，粒度级别越高，查询范围越小。</p><p>​    举个简单的例子，假设要知道用户A是否在上星期给气象局打过电话。如果使用低粒度级别的存储方式，数据仓库中会存储A用户所有的通话记录，虽然要遍历很多信息，但是终究是可以找到的；但是如果采用高粒度的存储方式，只存储A用户某一星期的通话次数，就无法确定他是否在上周给气象局打过电话。</p><p>​    在数据仓库的设计中往往需要对数据的粒度进行估计，可以根据以下指标粗略估计粒度。</p><p><img src="/2019/04/24/datafactory-2/data4.png" alt="1556260121789"></p><h4 id="数据分区"><a href="#数据分区" class="headerlink" title="数据分区"></a>数据分区</h4><p>​    数据分区指的是将数据划分成很多小的可管理的物理单元。数据分区的标准通常有以下几种：</p><blockquote><ul><li>时间</li><li>业务范围</li><li>地理位置</li><li>组织单位</li></ul></blockquote><h4 id="数据仓库的数据组织形式"><a href="#数据仓库的数据组织形式" class="headerlink" title="数据仓库的数据组织形式"></a>数据仓库的数据组织形式</h4><h5 id="1、简单的堆积结构"><a href="#1、简单的堆积结构" class="headerlink" title="1、简单的堆积结构"></a>1、简单的堆积结构</h5><p>​    以逐个记录作为记录堆积数据的形式，如系统中日常事务记录，下图（引用自《数据仓库》机械工业出版社 第四版）展示了这种数据组织形式：</p><p><img src="/2019/04/24/datafactory-2/data2.png" alt="1556173319582"></p><h5 id="2、轮转综合数据存储"><a href="#2、轮转综合数据存储" class="headerlink" title="2、轮转综合数据存储"></a>2、轮转综合数据存储</h5><p>​    轮转综合数据存储是简单逐日堆积数据的一种变种。下图（引用自《数据仓库》机械工业出版社 第四版）展示了这种数据组织形式：</p><p><img src="/2019/04/24/datafactory-2/data3.png" alt="1556173544078"></p><h5 id="3、简单直接文件"><a href="#3、简单直接文件" class="headerlink" title="3、简单直接文件"></a>3、简单直接文件</h5><p>​    数据仅仅是从操作型环境被拖入数据仓库环境中，并没有任何累积。简单直接文件不是在每天的基础上累积的，也是以较长的时间生成的，比如一个星期或者一个月等。</p><h5 id="4、连续文件"><a href="#4、连续文件" class="headerlink" title="4、连续文件"></a>4、连续文件</h5><p>​    将两个或者更多的简单直接文件链接起来就可以形成连续文件形式。</p><h4 id="数据仓库中的数据清理"><a href="#数据仓库中的数据清理" class="headerlink" title="数据仓库中的数据清理"></a>数据仓库中的数据清理</h4><p>​    数据在数据仓库中都有一定的生命周期，数据清理并不是说一定要从数据仓库中删除数据，而是上升到更高的综合级别。主要转化方式有以下几种形式：</p><ul><li>数据加入到一个丢失原有细节的轮转综合文件中</li><li>数据从高性能介质加入到大容量的介质上去</li><li>数据从系统中被清除</li><li>数据从体系结构环境的一个层次转化到另一个层次</li></ul><h4 id="数据仓库中的数据模型"><a href="#数据仓库中的数据模型" class="headerlink" title="数据仓库中的数据模型"></a>数据仓库中的数据模型</h4><p>​    数据建模分三个层次：高层模型（实体关系图ERD）、中间层建模（数据项集DIS）、底层建模（物理模型）。</p>]]></content>
     
     <summary type="html">
     

@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>http://yoursite.com/2019/05/28/cnn/</loc>
+    <lastmod>2019-05-28T09:17:23.117Z</lastmod>
+    <data>
+        <display>
+        <title>卷积神经网络</title>
+        <pubTime>2019-05-28T06:08:55.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+        <tag>深度学习</tag>
+         
+        <tag>卷积神经网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2019/04/24/datafactory-2/</loc>
-    <lastmod>2019-04-24T11:30:53.729Z</lastmod>
+    <lastmod>2019-04-26T06:29:01.187Z</lastmod>
     <data>
         <display>
         <title>数据仓库特性和基本概念</title>

@@ -97,7 +97,10 @@
 <meta property="og:description" content="数据仓库特性和基本概念数据仓库概念​    数据仓库是一个面向主题、集成的、非易失的、随时间变化的用来支持管理人员决策的数据集合。 数据仓库的特性1、面向主题​    数据仓库在面向特定业务已经定义好主题，每个主题可以一组相关的表来具体实现。 2、集成​    数据仓库的数据来源于不同的数据源，这些数据进入数据仓库必须进行转换，重新格式化，重新排列和汇总，最后的结果是存在于数据仓库中的单一物理映像">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/04/24/datafactory-2/data1.png">
-<meta property="og:updated_time" content="2019-04-24T11:30:53.729Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/24/datafactory-2/data4.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/24/datafactory-2/data2.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/24/datafactory-2/data3.png">
+<meta property="og:updated_time" content="2019-04-26T06:29:01.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据仓库特性和基本概念">
 <meta name="twitter:description" content="数据仓库特性和基本概念数据仓库概念​    数据仓库是一个面向主题、集成的、非易失的、随时间变化的用来支持管理人员决策的数据集合。 数据仓库的特性1、面向主题​    数据仓库在面向特定业务已经定义好主题，每个主题可以一组相关的表来具体实现。 2、集成​    数据仓库的数据来源于不同的数据源，这些数据进入数据仓库必须进行转换，重新格式化，重新排列和汇总，最后的结果是存在于数据仓库中的单一物理映像">
@@ -223,7 +226,7 @@
       
         
         <li class="menu-item menu-item-机器学习">
-          <a href="/categories/machine-learning" rel="section">
+          <a href="/categories/机器学习" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-android"></i> <br>
             
@@ -399,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  500
+                  1k
                 </span>
               
 
@@ -415,7 +418,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -443,8 +446,33 @@
 <a id="more"></a>
 <h5 id="3、非易失性"><a href="#3、非易失性" class="headerlink" title="3、非易失性"></a>3、非易失性</h5><p>​    数据仓库中的数据通常是批量的载入和访问，一般情况下，数据仓库中的数据不进行数据更新，当产生后继变化的时候，一个新的记录就会被写入数据仓库。</p>
 <h5 id="4、随时间变化"><a href="#4、随时间变化" class="headerlink" title="4、随时间变化"></a>4、随时间变化</h5><p>​    时变性的意思就是数据仓库中的每个数据单元只是在某一时间是准确的。</p>
-<h4 id="数据仓库中的基本概念"><a href="#数据仓库中的基本概念" class="headerlink" title="数据仓库中的基本概念"></a>数据仓库中的基本概念</h4><h5 id="1、粒度"><a href="#1、粒度" class="headerlink" title="1、粒度"></a>1、粒度</h5><p>​    粒度指的是数据仓库中数据单元的细节程度或综合程度的级别。粒度级别越低，查询越广泛；反之，粒度级别越高，查询范围越小。</p>
+<h4 id="数据仓库中的粒度"><a href="#数据仓库中的粒度" class="headerlink" title="数据仓库中的粒度"></a>数据仓库中的粒度</h4><p>​    粒度指的是数据仓库中数据单元的细节程度或综合程度的级别。粒度级别越低，查询越广泛；反之，粒度级别越高，查询范围越小。</p>
 <p>​    举个简单的例子，假设要知道用户A是否在上星期给气象局打过电话。如果使用低粒度级别的存储方式，数据仓库中会存储A用户所有的通话记录，虽然要遍历很多信息，但是终究是可以找到的；但是如果采用高粒度的存储方式，只存储A用户某一星期的通话次数，就无法确定他是否在上周给气象局打过电话。</p>
+<p>​    在数据仓库的设计中往往需要对数据的粒度进行估计，可以根据以下指标粗略估计粒度。</p>
+<p><img src="/2019/04/24/datafactory-2/data4.png" alt="1556260121789"></p>
+<h4 id="数据分区"><a href="#数据分区" class="headerlink" title="数据分区"></a>数据分区</h4><p>​    数据分区指的是将数据划分成很多小的可管理的物理单元。数据分区的标准通常有以下几种：</p>
+<blockquote>
+<ul>
+<li>时间</li>
+<li>业务范围</li>
+<li>地理位置</li>
+<li>组织单位</li>
+</ul>
+</blockquote>
+<h4 id="数据仓库的数据组织形式"><a href="#数据仓库的数据组织形式" class="headerlink" title="数据仓库的数据组织形式"></a>数据仓库的数据组织形式</h4><h5 id="1、简单的堆积结构"><a href="#1、简单的堆积结构" class="headerlink" title="1、简单的堆积结构"></a>1、简单的堆积结构</h5><p>​    以逐个记录作为记录堆积数据的形式，如系统中日常事务记录，下图（引用自《数据仓库》机械工业出版社 第四版）展示了这种数据组织形式：</p>
+<p><img src="/2019/04/24/datafactory-2/data2.png" alt="1556173319582"></p>
+<h5 id="2、轮转综合数据存储"><a href="#2、轮转综合数据存储" class="headerlink" title="2、轮转综合数据存储"></a>2、轮转综合数据存储</h5><p>​    轮转综合数据存储是简单逐日堆积数据的一种变种。下图（引用自《数据仓库》机械工业出版社 第四版）展示了这种数据组织形式：</p>
+<p><img src="/2019/04/24/datafactory-2/data3.png" alt="1556173544078"></p>
+<h5 id="3、简单直接文件"><a href="#3、简单直接文件" class="headerlink" title="3、简单直接文件"></a>3、简单直接文件</h5><p>​    数据仅仅是从操作型环境被拖入数据仓库环境中，并没有任何累积。简单直接文件不是在每天的基础上累积的，也是以较长的时间生成的，比如一个星期或者一个月等。</p>
+<h5 id="4、连续文件"><a href="#4、连续文件" class="headerlink" title="4、连续文件"></a>4、连续文件</h5><p>​    将两个或者更多的简单直接文件链接起来就可以形成连续文件形式。</p>
+<h4 id="数据仓库中的数据清理"><a href="#数据仓库中的数据清理" class="headerlink" title="数据仓库中的数据清理"></a>数据仓库中的数据清理</h4><p>​    数据在数据仓库中都有一定的生命周期，数据清理并不是说一定要从数据仓库中删除数据，而是上升到更高的综合级别。主要转化方式有以下几种形式：</p>
+<ul>
+<li>数据加入到一个丢失原有细节的轮转综合文件中</li>
+<li>数据从高性能介质加入到大容量的介质上去</li>
+<li>数据从系统中被清除</li>
+<li>数据从体系结构环境的一个层次转化到另一个层次</li>
+</ul>
+<h4 id="数据仓库中的数据模型"><a href="#数据仓库中的数据模型" class="headerlink" title="数据仓库中的数据模型"></a>数据仓库中的数据模型</h4><p>​    数据建模分三个层次：高层模型（实体关系图ERD）、中间层建模（数据项集DIS）、底层建模（物理模型）。</p>
 
       
     </div>
@@ -515,6 +543,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/28/cnn/" rel="prev" title="卷积神经网络">
+                卷积神经网络 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -636,7 +668,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -647,7 +679,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -658,7 +690,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -722,6 +754,10 @@
             
             
               <li>
+                <a href="/2019/05/28/cnn/" title="卷积神经网络" target="_blank">卷积神经网络</a>
+              </li>
+            
+              <li>
                 <a href="/2019/04/24/datafactory-2/" title="数据仓库特性和基本概念" target="_blank">数据仓库特性和基本概念</a>
               </li>
             
@@ -735,10 +771,6 @@
             
               <li>
                 <a href="/2018/11/27/hello-world/" title="不吃香菜的博客" target="_blank">不吃香菜的博客</a>
-              </li>
-            
-              <li>
-                <a href="/2018/09/07/java-string/" title="java基础-字符串" target="_blank">java基础-字符串</a>
               </li>
             
             </ul>
@@ -760,7 +792,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据仓库特性和基本概念"><span class="nav-number">1.</span> <span class="nav-text">数据仓库特性和基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据仓库概念"><span class="nav-number">1.1.</span> <span class="nav-text">数据仓库概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据仓库的特性"><span class="nav-number">1.2.</span> <span class="nav-text">数据仓库的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、面向主题"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、面向主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、集成"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、集成</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、非易失性"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、非易失性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、随时间变化"><span class="nav-number">1.2.4.</span> <span class="nav-text">4、随时间变化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据仓库中的基本概念"><span class="nav-number">1.3.</span> <span class="nav-text">数据仓库中的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、粒度"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、粒度</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据仓库特性和基本概念"><span class="nav-number">1.</span> <span class="nav-text">数据仓库特性和基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据仓库概念"><span class="nav-number">1.1.</span> <span class="nav-text">数据仓库概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据仓库的特性"><span class="nav-number">1.2.</span> <span class="nav-text">数据仓库的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、面向主题"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、面向主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、集成"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、集成</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、非易失性"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、非易失性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、随时间变化"><span class="nav-number">1.2.4.</span> <span class="nav-text">4、随时间变化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据仓库中的粒度"><span class="nav-number">1.3.</span> <span class="nav-text">数据仓库中的粒度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据分区"><span class="nav-number">1.4.</span> <span class="nav-text">数据分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据仓库的数据组织形式"><span class="nav-number">1.5.</span> <span class="nav-text">数据仓库的数据组织形式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、简单的堆积结构"><span class="nav-number">1.5.1.</span> <span class="nav-text">1、简单的堆积结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、轮转综合数据存储"><span class="nav-number">1.5.2.</span> <span class="nav-text">2、轮转综合数据存储</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、简单直接文件"><span class="nav-number">1.5.3.</span> <span class="nav-text">3、简单直接文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、连续文件"><span class="nav-number">1.5.4.</span> <span class="nav-text">4、连续文件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据仓库中的数据清理"><span class="nav-number">1.6.</span> <span class="nav-text">数据仓库中的数据清理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据仓库中的数据模型"><span class="nav-number">1.7.</span> <span class="nav-text">数据仓库中的数据模型</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -795,7 +827,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.6k</span>
+    <span title="Site words total count">7.8k</span>
   
 </div>
 
